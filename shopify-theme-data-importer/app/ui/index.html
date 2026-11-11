@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Theme Data Importer</title>
+  <meta name="color-scheme" content="dark">
+  <link rel="icon" href="favicon.ico" sizes="any">
+  <link rel="icon" href="logo.svg" type="image/svg+xml">
+  <link rel="preload" href="fonts/playfair.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/inter.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="app.css">
+</head>
+<body>
+
+<!-- ============================== PRELOADER ============================== -->
+<div id="preloader" aria-label="Loading">
+  <div class="rays"></div>
+  <div class="curtain top"></div>
+  <div class="curtain bottom"></div>
+  <div class="stage">
+    <svg class="pl-logo" viewBox="0 0 512 512" aria-hidden="true">
+      <defs>
+        <linearGradient id="plbg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#17C795"/><stop offset=".45" stop-color="#008060"/><stop offset="1" stop-color="#012A21"/></linearGradient>
+        <linearGradient id="plgold" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#FFF1C9"/><stop offset=".35" stop-color="#E7C77F"/><stop offset=".7" stop-color="#C79A45"/><stop offset="1" stop-color="#F6DE9F"/></linearGradient>
+        <radialGradient id="plglow" cx=".3" cy=".18" r=".75"><stop offset="0" stop-color="#fff" stop-opacity=".32"/><stop offset=".55" stop-color="#fff" stop-opacity="0"/></radialGradient>
+      </defs>
+      <g class="badge-fill"><rect x="8" y="8" width="496" height="496" rx="118" fill="url(#plbg)"/><rect x="8" y="8" width="496" height="496" rx="118" fill="url(#plglow)"/></g>
+      <rect class="badge-line" x="26" y="26" width="460" height="460" rx="102" fill="none" stroke="url(#plgold)" stroke-width="5"/>
+      <g class="gem" fill="none" stroke="url(#plgold)" stroke-linejoin="round" stroke-linecap="round">
+        <path d="M166 172 H346 L404 238 L256 408 L108 238 Z" stroke-width="20"/>
+        <path d="M108 238 H404" stroke-width="12"/>
+        <path d="M166 172 L212 238 L256 172 L300 238 L346 172" stroke-width="12"/>
+        <path d="M212 238 L256 408 L300 238" stroke-width="12"/>
+      </g>
+      <path class="spark" d="M404 92 C407 112 414 119 434 122 C414 125 407 132 404 152 C401 132 394 125 374 122 C394 119 401 112 404 92 Z" fill="url(#plgold)"/>
+    </svg>
+    <div class="pl-title" id="plTitle">Theme Data Importer</div>
+    <div class="pl-sub">For Shopify &nbsp;·&nbsp; Premium Edition</div>
+    <div class="pl-bar"><i id="plBar"></i></div>
+    <div class="pl-meta" id="plMeta">INITIALIZING</div>
+  </div>
+</div>
+
+<!-- ============================== ANNOUNCEMENT BAR ============================== -->
+<div class="announce boot" id="announce" aria-label="Developed by Dev Haider Ali">
+  <div class="ann-track">
+    <div class="ann-group">
+      <span class="ann-item"><i>✦</i>Developed by <b class="ann-name">Dev Haider Ali</b></span>
+      <span class="ann-item"><i>✦</i>Shopify Theme Data Importer <em>v3 Premium</em></span>
+      <span class="ann-item"><i>✦</i>Store → Store · Theme Demo · WooCommerce · Blogs</span>
+      <span class="ann-item"><i>✦</i>Crafted with care by <b class="ann-name">Dev Haider Ali</b></span>
+      <span class="ann-item"><i>✦</i>100% local · secure · exact migration</span>
+    </div>
+    <div class="ann-group" aria-hidden="true">
+      <span class="ann-item"><i>✦</i>Developed by <b class="ann-name">Dev Haider Ali</b></span>
+      <span class="ann-item"><i>✦</i>Shopify Theme Data Importer <em>v3 Premium</em></span>
+      <span class="ann-item"><i>✦</i>Store → Store · Theme Demo · WooCommerce · Blogs</span>
+      <span class="ann-item"><i>✦</i>Crafted with care by <b class="ann-name">Dev Haider Ali</b></span>
+      <span class="ann-item"><i>✦</i>100% local · secure · exact migration</span>
+    </div>
+  </div>
+</div>
+
+<!-- ============================== APP ============================== -->
+<div class="app boot" id="app">
+  <aside class="sidebar">
+    <div class="brand">
+      <img src="logo.svg" alt="">
+      <div class="txt"><div class="t1">Theme Data</div><div class="t2">Importer</div></div>
+    </div>
+    <nav class="nav" id="nav"></nav>
+    <div class="side-foot">
+      Developed by <b id="author">Haider Ali</b>
+      <div class="ver" id="ver">v3.0.0</div>
+    </div>
+  </aside>
+
+  <main class="main">
+    <header class="topbar">
+      <div>
+        <div class="crumb" id="crumb">Dashboard</div>
+        <h1 id="pageTitle">Welcome</h1>
+      </div>
+      <div class="spacer"></div>
+      <button class="btn sm ghost" id="openOutput" title="Theme ZIPs aur logs isi folder me save hote hain">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg>
+        Output folder
+      </button>
+      <div class="chip-status" id="status"><i></i><span>Ready</span></div>
+    </header>
+    <div class="content" id="content">
+      <section class="view" data-view="home"></section>
+      <section class="view" data-view="migrate"></section>
+      <section class="view" data-view="demo"></section>
+      <section class="view" data-view="woo"></section>
+      <section class="view" data-view="blog"></section>
+      <section class="view" data-view="token"></section>
+      <section class="view" data-view="guide"></section>
+      <section class="view" data-view="run"></section>
+    </div>
+  </main>
+</div>
+
+<div id="toasts"></div>
+<div class="modal-bg" id="modal"><div class="modal"><h3 id="mTitle"></h3><p id="mText"></p>
+  <div class="btn-row" style="justify-content:flex-end"><button class="btn ghost" id="mNo">Nahi</button><button class="btn gold" id="mYes">Haan</button></div></div></div>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs><linearGradient id="ringGrad" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#12d39c"/><stop offset=".55" stop-color="#e7c77f"/><stop offset="1" stop-color="#fff1c9"/></linearGradient></defs>
+</svg>
+
+<script src="app.js"></script>
+</body>
+</html>
